@@ -40,7 +40,7 @@
         </ol>
         <hr />
         <h2>Formulario de inscripción</h2>
-        <form>
+        <form id="formaRegistro">
             <div class="form-group">
                 <label for="nit">NIT</label>
                 <input type="text" class="form-control" id="nit" placeholder="Número de Identificación Tributaria">
@@ -49,22 +49,24 @@
                 <label for="razonsocial">Razón Social</label>
                 <input type="text" class="form-control" id="razonsocial" placeholder="Nombre del participante">
             </div>
-            <button type="submit" class="btn btn-primary">Registrarse</button>
+            <button type="submit" class="btn btn-primary" onclick="register();">Registrarse</button>
         </form>
         <hr />
         <h2>Listado de ofertas</h2>
+        <div id="rot"></div>
         <!--Reemplace estos párrafos por las ofertas reales recibidas-->
         <p>Consorcio F&R [Oferta no aceptada]</p>
         <p>Grupo Fernánez Gómez [Oferta no aceptada]</p>
         <p>Unión Temporal Sinergia [Oferta no aceptada]</p>
         <p>Grupo DRFE [<strong>Oferta aceptada. Valor: $168.054.320</strong>]</p>
-        <button type="submit" class="btn btn-primary">Ofertar</button>
+        <button type="submit" class="btn btn-primary" onclick="ofertar();" disabled>Ofertar</button>
     </div>
 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./scripts/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
