@@ -1,4 +1,5 @@
 let socket = io.connect("http://localhost:3000", { "forceNew": true });
+
 var data, pName, pNit;
 socket.on("ofertas", pData=>{
     data = pData;
@@ -53,7 +54,24 @@ function ofertar(){
         });
         var val = max + (5000000 * Math.random() + 5000000);
         socket.emit("new-oferta", {cantidad : val, author: pName})
+        
     }
+    if (asignarContrato()){
+            
+    }
+    else{
+
+    }
+}
+
+function asignarContrato(){
+    var PB = Math.random() * 0.8 + 0.3;
+    var PO = Math.random() * 0.8 + 0.3;
+    var ret = false;
+    if(PO > PB){
+        ret = true;
+    } 
+    return ret;
 }
 
 socket.on('new-oferta', data=>{
